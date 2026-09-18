@@ -16,4 +16,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   darkModeToggle.addEventListener('click', toggleDarkMode);
   lightModeToggle.addEventListener('click', toggleDarkMode);
+
+  const menuBtn = document.querySelector('.menu-button');
+  const menu = document.querySelector('header nav');
+
+  menuBtn.addEventListener('click', () => {
+    const isActive = menu.classList.toggle('active');
+    menuBtn.setAttribute('aria-expanded', isActive);
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      menu.classList.remove('active');
+    }
+  });
 })
