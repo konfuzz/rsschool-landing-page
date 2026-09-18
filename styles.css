@@ -1,33 +1,41 @@
 /* FLUID RESPONSIVE */
 :root {
-  --font-from-0: 12;
+  --font-from-0: 0;
   --font-to-0: 16;
   --vw-from-0: calc(1 / 100);
-  --vw-to-0: calc(380 / 100);
+  --vw-to-0: calc(379 / 100);
   --coefficient-0: calc((var(--font-to-0) - var(--font-from-0)) / (var(--vw-to-0) - var(--vw-from-0)));
   --base-0: calc((var(--font-from-0) - var(--vw-from-0) * var(--coefficient-0)) / 16);
 
-  --font-from-1: 7.94;
-  --font-to-1: 16;
-  --vw-from-1: calc(380 / 100);
-  --vw-to-1: calc(768 / 100);
+  --font-from-1: 16;
+  --font-to-1: 20.168;
+  --vw-from-1: calc(379 / 100);
+  --vw-to-1: calc(479 / 100);
   --coefficient-1: calc((var(--font-to-1) - var(--font-from-1)) / (var(--vw-to-1) - var(--vw-from-1)));
   --base-1: calc((var(--font-from-1) - var(--vw-from-1) * var(--coefficient-1)) / 16);
 
-  --font-from-2: 11;
+  --font-from-2: 10;
   --font-to-2: 16;
-  --vw-from-2: calc(768 / 100);
-  --vw-to-2: calc(1440 / 100);
+  --vw-from-2: calc(479 / 100);
+  --vw-to-2: calc(768 / 100);
   --coefficient-2: calc((var(--font-to-2) - var(--font-from-2)) / (var(--vw-to-2) - var(--vw-from-2)));
   --base-2: calc((var(--font-from-2) - var(--vw-from-2) * var(--coefficient-2)) / 16);
 
-  --font-size-3: 1;
+  --font-from-3: 8.544;
+  --font-to-3: 16;
+  --vw-from-3: calc(768 / 100);
+  --vw-to-3: calc(1440 / 100);
+  --coefficient-3: calc((var(--font-to-3) - var(--font-from-3)) / (var(--vw-to-3) - var(--vw-from-3)));
+  --base-3: calc((var(--font-from-3) - var(--vw-from-3) * var(--coefficient-3)) / 16);
+
+  --font-size-4: 1;
 }
 
-html { font-size: calc(var(--font-size-3) * 1rem); }
-@media screen and (max-width: 1440px) { html { font-size: calc(var(--base-2) * 1rem + var(--coefficient-2) * 1vw); } }
-@media screen and (max-width: 768px) { html { font-size: calc(var(--base-1) * 1rem + var(--coefficient-1) * 1vw); } }
-@media screen and (max-width: 380px) { html { font-size: calc(var(--base-0) * 1rem + var(--coefficient-0) * 1vw); } }
+html { font-size: calc(var(--font-size-4) * 1rem); }
+@media screen and (max-width:1440px) { html { font-size: calc(var(--base-3) * 1rem + var(--coefficient-3) * 1vw); } }
+@media screen and (max-width:768px) { html { font-size: calc(var(--base-2) * 1rem + var(--coefficient-2) * 1vw); } }
+@media screen and (max-width:479px) { html { font-size: calc(var(--base-1) * 1rem + var(--coefficient-1) * 1vw); } }
+@media screen and (max-width:379px) { html { font-size: calc(var(--base-0) * 1rem + var(--coefficient-0) * 1vw); } }
 
 /* VARS */
 :root {
@@ -82,6 +90,10 @@ body {
   margin: 0;
   transition: all 0.3s ease;
   padding: 0 2.5rem;
+
+  @media (max-width: 479px) {
+    padding: 0 1rem;
+  }
 }
 
 a:not([class]) {
@@ -105,12 +117,20 @@ h1 {
   font-size: 4.5rem;
   line-height: 1.05;
   font-weight: 600;
+
+  @media (max-width: 479px) {
+    font-size: 2.625rem;
+  }
 }
 
 h2 {
   font-size: 3.75rem;
   line-height: 1.25;
   font-weight: 600;
+
+  @media (max-width: 479px) {
+    font-size: 2rem;
+  }
 }
 
 h3 {
@@ -205,6 +225,10 @@ header a {
   display: flex;
   gap: 1.5rem;
   align-items: center;
+
+  @media (max-width: 479px) {
+    gap: 0.75rem;
+  }
 }
 
 .theme-switch {
@@ -369,6 +393,10 @@ header nav.active .menu-button svg path:nth-of-type(2) {
   @media (max-width: 768px) {
     padding: 6.25rem  3.75rem;
   }
+
+  @media (max-width: 479px) {
+    padding: 3.75rem 1rem;
+  }
 }
 
 .hero > *:not(video) {
@@ -394,6 +422,11 @@ header nav.active .menu-button svg path:nth-of-type(2) {
   display: grid;
   grid-template-columns: 3.75rem 1fr 3.75rem;
   gap: 2.5rem;
+  align-items: center;
+
+  @media (max-width: 479px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .slider__arrow {
@@ -401,6 +434,26 @@ header nav.active .menu-button svg path:nth-of-type(2) {
   border: none;
   cursor: pointer;
   padding: 0;
+  width: 3.75rem;
+  height: 3.75rem;
+  display: grid;
+  border-radius: 100vw;
+  border: 1px solid var(--color-border-inverse);
+  color: var(--color-text-primary);
+  transition: all 0.3s ease;
+  svg {
+    width: 0.84375rem;
+    height: 0.8125rem;
+    place-self: center;
+  }
+  &:hover {
+    background-color: var(--color-border-inverse);
+    color: var(--color-text-inverse);
+  }
+
+  @media (max-width: 479px) {
+    display: none;
+  }
 }
 .slider__arrow.right {
   transform: rotate(180deg);
@@ -412,6 +465,12 @@ header nav.active .menu-button svg path:nth-of-type(2) {
   flex-direction: column;
   align-items: center;
   gap: 1.25rem;
+}
+.slide__image {
+  width: 100%;
+  max-width: 30rem;
+  height: auto;
+  aspect-ratio: 1;
 }
 .slide__content {
   max-width: 30rem;
@@ -448,6 +507,9 @@ header nav.active .menu-button svg path:nth-of-type(2) {
   columns: 2;
   column-gap: 2.5rem;
   margin-top: 2.5rem;
+  @media (max-width: 768px) {
+    columns: 1;
+  }
 }
 .image-wrapper {
   overflow: hidden;
@@ -455,10 +517,16 @@ header nav.active .menu-button svg path:nth-of-type(2) {
 
   &.main {
     aspect-ratio: 660 / 590;
+    @media (max-width: 479px) {
+      aspect-ratio: 348 / 590;
+    }
   }
 
   &.secondary {
     aspect-ratio: 660 / 430;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   &:not(:last-child) {
@@ -484,6 +552,14 @@ header nav.active .menu-button svg path:nth-of-type(2) {
   gap: 6.25rem;
   align-items: center;
 
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: 479px) {
+    gap: 2.5rem;
+  }
+
   img {
     flex-shrink: 1;
     max-width: 100%;
@@ -503,10 +579,16 @@ header nav.active .menu-button svg path:nth-of-type(2) {
 .app-buttons {
   display: flex;
   gap: 1.25rem;
+
+  @media (max-width: 479px) {
+    flex-direction: column;
+  }
 }
 
-body.dark-mode .button-store {
-  --color-text-inverse: #403F3D;
+body.dark-mode {
+  .button-store, .slider__arrow {
+    --color-text-inverse: #403F3D;
+  }
 }
 
 .button-store {
@@ -560,6 +642,20 @@ body.dark-mode .button-store {
   gap: 6.25rem;
   align-items: center;
   color: var(--color-text-inverse);
+
+  @media (max-width: 768px) {
+    padding: 6.25rem 3.75rem;
+    grid-template-columns: 1fr;
+
+    h2 {
+      white-space: pre-line;
+    }
+  }
+
+  @media (max-width: 479px) {
+    padding: 3.75rem 1rem;
+    gap: 2.5rem;
+  }
 }
 
 .footer__column {
@@ -580,6 +676,14 @@ body.dark-mode .button-store {
   border-radius: 100vw;
   background-color: transparent;
   transition: all 0.3s ease;
+  border: 1px solid var(--color-text-inverse);
+  display: grid;
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    place-self: center;
+  }
 
   &:hover {
     background-color: var(--color-text-inverse);
