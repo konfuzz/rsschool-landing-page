@@ -1,0 +1,14 @@
+h1 {
+  text-align: center;
+  text-wrap: balance;
+}
+
+.tabs__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  input {
+    opacity: 0;
+  }
+}
