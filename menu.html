@@ -4,14 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
     rel="stylesheet">
   <title>Coffee house</title>
-  <link rel="stylesheet" href="common.css">
-  <link rel="stylesheet" href="menu.css">
+  <link rel="stylesheet" href="/common.css">
+  <link rel="stylesheet" href="/menu.css">
 </head>
 
 <body>
@@ -70,16 +71,201 @@
   <main>
     <section>
       <h1>Behind each of our cups hides an <span class="accent">amazing surprise</span></h1>
-      <div class="tabs">
+      <div class="tabs" data-collapsed="true">
         <form class="tabs__buttons">
-          <label for=""><input type="radio" name="tab" id="tab1" checked><span class="icon">☕</span>Coffee</label>
-          <label for=""><input type="radio" name="tab" id="tab2"><span class="icon">🫖</span>Tea</label>
-          <label for=""><input type="radio" name="tab" id="tab3"><span class="icon">🍰</span>Dessert</label>
+          <label for="coffee"><input type="radio" name="tab" id="coffee" checked><div class="icon"><img src="/assets/icons/coffee.png" alt=""></div>Coffee</label>
+          <label for="tea"><input type="radio" name="tab" id="tea"><div class="icon"><img src="/assets/icons/teapot.png" alt=""></div>Tea</label>
+          <label for="dessert"><input type="radio" name="tab" id="dessert"><div class="icon"><img src="/assets/icons/cake.png" alt=""></div>Dessert</label>
         </form>
         <div class="tabs__content">
-
+          <article class="card" data-category="coffee">
+            <div class="card__image">
+              <img src="/assets/menu/coffee-1.png" alt="Irish coffee"></div>
+            <div class="card__content">
+              <h3 class="card__title">Irish coffee</h3>
+              <p class="card__description">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
+              <p class="card__price">$7.00</p>
+            </div>
+          </article>
+          <article class="card" data-category="coffee">
+            <div class="card__image">
+              <img src="/assets/menu/coffee-2.png" alt="Kahlua coffee"></div>
+            <div class="card__content">
+              <h3 class="card__title">Kahlua coffee</h3>
+              <p class="card__description">Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p>
+              <p class="card__price">$7.00</p>
+            </div>
+          </article>
+          <article class="card" data-category="coffee">
+            <div class="card__image">
+              <img src="/assets/menu/coffee-3.png" alt="Honey raf"></div>
+            <div class="card__content">
+              <h3 class="card__title">Honey raf</h3>
+              <p class="card__description">Espresso with frothed milk, cream and aromatic honey</p>
+              <p class="card__price">$5.50</p>
+            </div>
+          </article>
+          <article class="card" data-category="coffee">
+            <div class="card__image">
+              <img src="/assets/menu/coffee-4.png" alt="Ice cappuccino"></div>
+            <div class="card__content">
+              <h3 class="card__title">Ice cappuccino</h3>
+              <p class="card__description">Cappuccino with soft thick foam in summer version with ice</p>
+              <p class="card__price">$5.00</p>
+            </div>
+          </article>
+          <article class="card" data-category="coffee">
+            <div class="card__image">
+              <img src="/assets/menu/coffee-5.png" alt="Espresso"></div>
+            <div class="card__content">
+              <h3 class="card__title">Espresso</h3>
+              <p class="card__description">Classic black coffee</p>
+              <p class="card__price">$4.00</p>
+            </div>
+          </article>
+          <article class="card" data-category="coffee">
+            <div class="card__image">
+              <img src="/assets/menu/coffee-6.png" alt="Latte"></div>
+            <div class="card__content">
+              <h3 class="card__title">Latte</h3>
+              <p class="card__description">Espresso coffee with the addition of steamed milk and dense milk foam</p>
+              <p class="card__price">$5.50</p>
+            </div>
+          </article>
+          <article class="card" data-category="coffee">
+            <div class="card__image">
+              <img src="/assets/menu/coffee-7.png" alt="Latte macchiato"></div>
+            <div class="card__content">
+              <h3 class="card__title">Latte macchiato</h3>
+              <p class="card__description">Espresso with frothed milk and chocolate</p>
+              <p class="card__price">$5.50</p>
+            </div>
+          </article>
+          <article class="card" data-category="coffee">
+            <div class="card__image">
+              <img src="/assets/menu/coffee-8.png" alt="Coffee with cognac"></div>
+            <div class="card__content">
+              <h3 class="card__title">Coffee with cognac</h3>
+              <p class="card__description">Fragrant black coffee with cognac and whipped cream</p>
+              <p class="card__price">$6.50</p>
+            </div>
+          </article>
+          <article class="card" data-category="tea">
+            <div class="card__image">
+              <img src="/assets/menu/tea-1.png" alt="Moroccan"></div>
+            <div class="card__content">
+              <h3 class="card__title">Moroccan</h3>
+              <p class="card__description">Fragrant black tea with the addition of tangerine, cinnamon, honey, lemon and mint</p>
+              <p class="card__price">$4.50</p>
+            </div>
+          </article>
+          <article class="card" data-category="tea">
+            <div class="card__image">
+              <img src="/assets/menu/tea-2.png" alt="Ginger"></div>
+            <div class="card__content">
+              <h3 class="card__title">Ginger</h3>
+              <p class="card__description">Original black tea with fresh ginger, lemon and honey</p>
+              <p class="card__price">$5.00</p>
+            </div>
+          </article>
+          <article class="card" data-category="tea">
+            <div class="card__image">
+              <img src="/assets/menu/tea-3.png" alt="Cranberry"></div>
+            <div class="card__content">
+              <h3 class="card__title">Cranberry</h3>
+              <p class="card__description">Invigorating black tea with cranberry and honey</p>
+              <p class="card__price">$5.00</p>
+            </div>
+          </article>
+          <article class="card" data-category="tea">
+            <div class="card__image">
+              <img src="/assets/menu/tea-4.png" alt="Sea buckthorn"></div>
+            <div class="card__content">
+              <h3 class="card__title">Sea buckthorn</h3>
+              <p class="card__description">Toning sweet black tea with sea buckthorn, fresh thyme and cinnamon</p>
+              <p class="card__price">$5.50</p>
+            </div>
+          </article>
+          <article class="card" data-category="dessert">
+            <div class="card__image">
+              <img src="/assets/menu/dessert-1.png" alt="Marble cheesecake"></div>
+            <div class="card__content">
+              <h3 class="card__title">Marble cheesecake</h3>
+              <p class="card__description">Philadelphia cheese with lemon zest on a light sponge cake and red currant jam</p>
+              <p class="card__price">$3.50</p>
+            </div>
+          </article>
+          <article class="card" data-category="dessert">
+            <div class="card__image">
+              <img src="/assets/menu/dessert-2.png" alt="Red velvet"></div>
+            <div class="card__content">
+              <h3 class="card__title">Red velvet</h3>
+              <p class="card__description">Layer cake with cream cheese frosting</p>
+              <p class="card__price">$4.00</p>
+            </div>
+          </article>
+          <article class="card" data-category="dessert">
+            <div class="card__image">
+              <img src="/assets/menu/dessert-3.png" alt="Cheesecakes"></div>
+            <div class="card__content">
+              <h3 class="card__title">Cheesecakes</h3>
+              <p class="card__description">Soft cottage cheese pancakes with sour cream and fresh berries and sprinkled with powdered sugar</p>
+              <p class="card__price">$4.50</p>
+            </div>
+          </article>
+          <article class="card" data-category="dessert">
+            <div class="card__image">
+              <img src="/assets/menu/dessert-4.png" alt="Creme brulee"></div>
+            <div class="card__content">
+              <h3 class="card__title">Creme brulee</h3>
+              <p class="card__description">Delicate creamy dessert in a caramel basket with wild berries</p>
+              <p class="card__price">$4.00</p>
+            </div>
+          </article>
+          <article class="card" data-category="dessert">
+            <div class="card__image">
+              <img src="/assets/menu/dessert-5.png" alt="Pancakes"></div>
+            <div class="card__content">
+              <h3 class="card__title">Pancakes</h3>
+              <p class="card__description">Tender pancakes with strawberry jam and fresh strawberries</p>
+              <p class="card__price">$4.50</p>
+            </div>
+          </article>
+          <article class="card" data-category="dessert">
+            <div class="card__image">
+              <img src="/assets/menu/dessert-6.png" alt="Honey cake"></div>
+            <div class="card__content">
+              <h3 class="card__title">Honey cake</h3>
+              <p class="card__description">Classic honey cake with delicate custard</p>
+              <p class="card__price">$4.50</p>
+            </div>
+          </article>
+          <article class="card" data-category="dessert">
+            <div class="card__image">
+              <img src="/assets/menu/dessert-7.png" alt="Chocolate cake"></div>
+            <div class="card__content">
+              <h3 class="card__title">Chocolate cake</h3>
+              <p class="card__description">Cake with hot chocolate filling and nuts with dried apricots</p>
+              <p class="card__price">$5.50</p>
+            </div>
+          </article>
+          <article class="card" data-category="dessert">
+            <div class="card__image">
+              <img src="/assets/menu/dessert-8.png" alt="Black forest"></div>
+            <div class="card__content">
+              <h3 class="card__title">Black forest</h3>
+              <p class="card__description">A combination of thin sponge cake with cherry jam and light chocolate mousse</p>
+              <p class="card__price">$6.50</p>
+            </div>
+          </article>
         </div>
       </div>
+      <button class="load-button">
+        <svg width="100%" style="" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.5 12C1.5 6.20101 6.20101 1.5 12 1.5C16.3064 1.5 20.0062 4.09248 21.626 7.7998C21.7365 8.05281 21.6211 8.34741 21.3682 8.45801C21.1151 8.56855 20.8206 8.45318 20.71 8.2002C19.2435 4.84393 15.8948 2.5 12 2.5C6.75329 2.5 2.5 6.75329 2.5 12C2.5 17.2467 6.75329 21.5 12 21.5C16.7619 21.5 20.706 17.9959 21.3936 13.4258C21.4346 13.1527 21.6898 12.9648 21.9629 13.0059C22.2357 13.0471 22.4238 13.3013 22.3828 13.5742C21.6228 18.6265 17.2641 22.5 12 22.5C6.20101 22.5 1.5 17.799 1.5 12Z" fill="currentColor"/>
+        <path d="M21.5 7.40039V3C21.5 2.72386 21.7239 2.5 22 2.5C22.2761 2.5 22.5 2.72386 22.5 3V7.40039C22.4998 8.00759 22.0076 8.49979 21.4004 8.5H17C16.7239 8.5 16.5 8.27614 16.5 8C16.5 7.72386 16.7239 7.5 17 7.5H21.4004C21.4553 7.49979 21.4998 7.45531 21.5 7.40039Z" fill="currentColor"/>
+        </svg>
+      </button>
     </section>
   </main>
 

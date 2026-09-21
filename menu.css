@@ -6,9 +6,178 @@ h1 {
 .tabs__buttons {
   display: flex;
   justify-content: center;
+  padding-block: 2.5rem;
   gap: 1rem;
 
   input {
     opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  label {
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    cursor: pointer;
+    background-color: var(--color-bg-page);
+    border: 1px solid var(--color-border-primary);
+    border-radius: 100vw;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    line-height: 1.5;
+    transition: all 0.3s ease;
+
+    &:hover, &:has(input:checked) {
+      background-color: var(--color-bg-container);
+      color: var(--color-bg-page);
+
+      .icon {
+        background-color: var(--color-bg-page);
+      }
+    }
+  }
+
+  .icon {
+    width: 1.875rem;
+    height: 1.875rem;
+    padding: 0.1875rem 0.4375rem;
+    background-color: var(--color-border-primary);
+    border-radius: 100vw;
+    margin-right: 0.5rem;
+    aspect-ratio: 1;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+}
+
+.tabs__content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  transition: all 0.3s ease;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  border-radius: 2.5rem;
+  border: 1px solid var(--color-border-primary);
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  display: none;
+
+  @starting-style {
+    opacity: 0;
+  }
+}
+
+.card__image {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 2.5rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    scale: 1.1;
+    transition: scale 0.3s ease;
+
+    &:hover {
+      scale: 1;
+    }
+  }
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  flex-grow: 1;
+}
+
+.card__description {
+  margin-bottom: auto;
+}
+
+.card__price {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.tabs:has(#coffee:checked) {
+  .card[data-category="coffee"] {
+    display: flex;
+  }
+}
+.tabs:has(#tea:checked) {
+  .card[data-category="tea"] {
+    display: flex;
+  }
+}
+
+.tabs:has(#dessert:checked) {
+  .card[data-category="dessert"] {
+    display: flex;
+  }
+}
+
+.load-button {
+  padding: 1.125rem;
+  background-color: transparent;
+  border: 1px solid var(--color-border-primary);
+  border-radius: 100vw;
+  margin: 2.5rem auto 0;
+  width: 3.75rem;
+  height: 3.75rem;
+  display: none;
+  cursor: pointer;
+  rotate: -0turn;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--color-border-primary);
+    rotate: 0.15turn;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabs[data-collapsed="true"]:has(#coffee:checked) {
+    .card:nth-child(n+5 of [data-category="coffee"]) {
+      display: none;
+    }
+    &:has(.card:nth-child(5 of [data-category="coffee"])) + .load-button {
+        display: block;
+    }
+  }
+
+  .tabs[data-collapsed="true"]:has(#tea:checked) {
+    .card:nth-child(n+5 of [data-category="tea"]) {
+      display: none;
+    }
+    &:has(.card:nth-child(5 of [data-category="tea"])) + .load-button {
+        display: block;
+    }
+  }
+
+  .tabs[data-collapsed="true"]:has(#dessert:checked) {
+    .card:nth-child(n+5 of [data-category="dessert"]) {
+      display: none;
+    }
+    &:has(.card:nth-child(5 of [data-category="dessert"])) + .load-button {
+        display: block;
+    }
   }
 }

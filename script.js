@@ -30,4 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
       menu.classList.remove('active');
     }
   });
+
+
+  const loadButton = document.querySelector('.load-button');
+  const tabs = document.querySelector('.tabs');
+  loadButton.addEventListener('click', () => {
+    tabs.dataset.collapsed = "false";
+  });
 })
