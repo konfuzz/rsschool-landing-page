@@ -94,6 +94,10 @@ body {
   @media (max-width: 479px) {
     padding: 0 1rem;
   }
+
+  &:has(nav.active) {
+    overflow: hidden;
+  }
 }
 
 a:not([class]) {
