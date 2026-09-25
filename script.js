@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Dark mode toggle
   const darkModeToggle = document.querySelector('button.dark');
   const lightModeToggle = document.querySelector('button.light');
 
@@ -17,6 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
   darkModeToggle.addEventListener('click', toggleDarkMode);
   lightModeToggle.addEventListener('click', toggleDarkMode);
 
+  // Menu toggle
+
   const menuBtn = document.querySelector('.menu-button');
   const menu = document.querySelector('header nav');
 
@@ -31,9 +34,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Products tabs
 
   const loadButton = document.querySelector('.load-button');
   const tabs = document.querySelector('.tabs');
+  const radioButtons = document.querySelectorAll('input[name="tab"]');
+
+  radioButtons.forEach((radio) => {
+    radio.addEventListener('change', () => {
+      tabs.dataset.collapsed = "true";
+    });
+  });
+
   loadButton.addEventListener('click', () => {
     tabs.dataset.collapsed = "false";
   });
