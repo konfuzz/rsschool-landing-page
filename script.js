@@ -38,7 +38,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const loadButton = document.querySelector('.load-button');
   const tabs = document.querySelector('.tabs');
+  const tabsContent = tabs.querySelector('.tabs__content');
   const radioButtons = document.querySelectorAll('input[name="tab"]');
+
+  async function getContent() {
+    const data = await fetch('products.json');
+    const json = await data.json();
+    return json;
+  }
+
+  async function populateTabs() {
+    const json = await getContent();
+    const template = document.querySelector("template");
+    const templateContent = template.content.cloneNode(true);
+
+    json.forEach((item) => {
+      templateContent.querySelector('article').dataset.category = item.category;
+      const img = templateContent.querySelector('img')
+      img.src = item.photo;
+      img.alt = item.name;
+      templateContent.querySelector('h2').textContent = item.name;
+      templateContent.querySelector('.card__description').textContent = item.description;
+      templateContent.querySelector('.card__price').textContent = `$${item.price}`;
+      const clone = templateContent.cloneNode(true);
+      tabsContent.appendChild(clone);
+    });
+
+  }
+
+  populateTabs();
 
   radioButtons.forEach((radio) => {
     radio.addEventListener('change', () => {
