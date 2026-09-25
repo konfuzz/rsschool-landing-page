@@ -150,8 +150,29 @@
       </ul>
     </div>
   </footer>
+  <dialog class="dialog" id="dialog" closedby="any">
+    <div class="dialog__wrapper">
+      <div class="dialog__image">
+        <img src="" alt=""></div>
+      <div class="dialog__content">
+        <h3 class="dialog__title">Irish coffee</h3>
+        <p class="dialog__description">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
+        <form>
+          <fieldset class="dialog__size">
+            <legend>Size</legend>
+          </fieldset>
+          <fieldset class="dialog__additives">
+            <legend>Additives</legend>
+          </fieldset>
+        </form>
+        <p class="dialog__price">$7.00</p>
+        <button commandfor="dialog" command="close">Close</button>
+      </div>
+    </div>
+  </dialog>
+
   <template>
-    <article class="card" data-category="coffee">
+    <article class="card" data-category="coffee" data-id="">
       <div class="card__image">
         <img src="" alt=""></div>
       <div class="card__content">
@@ -162,6 +183,7 @@
     </article>
   </template>
   <script src="script.js"></script>
+  <script src="products.js"></script>
 </body>
 
 </html>
