@@ -8,6 +8,9 @@ h1 {
   justify-content: center;
   padding-block: 2.5rem;
   gap: 1rem;
+  @media (max-width: 479px) {
+    gap: 0.5rem;
+  }
 }
 
 .tabs__content {
@@ -22,6 +25,7 @@ h1 {
 
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
+    padding-inline: 1.1875rem;
   }
 }
 
@@ -54,8 +58,10 @@ h1 {
     scale: 1.1;
     transition: scale 0.3s ease;
 
-    &:hover {
-      scale: 1;
+    @media (hover: hover) {
+      &:hover {
+        scale: 1;
+      }
     }
   }
 }
@@ -113,9 +119,11 @@ h1 {
   rotate: -0turn;
   transition: all 0.3s ease;
 
-  &:hover {
-    background-color: var(--color-border-primary);
-    rotate: 0.15turn;
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--color-border-primary);
+      rotate: 0.15turn;
+    }
   }
 }
 
@@ -158,6 +166,7 @@ h1 {
   max-width: 50rem;
   opacity: 0;
   transition: all 0.3s allow-discrete;
+  color: var(--color-text-primary);
   @media (max-width: 768px) {
     max-width: 43rem;
   }
@@ -267,10 +276,12 @@ fieldset.dialog__additives {
   cursor: pointer;
   transition: all 0.3s ease;
 
-  &:hover {
-    background-color: var(--color-bg-container);
-    border-color: var(--color-border-primary);
-    color: var(--color-text-inverse);
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--color-bg-container);
+      border-color: var(--color-border-primary);
+      color: var(--color-text-inverse);
+    }
   }
 }
 
@@ -292,9 +303,22 @@ label {
   line-height: 1.5;
   transition: all 0.3s ease;
 
-  &:hover, &:has(input:checked) {
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--color-bg-container);
+      color: var(--color-text-inverse);
+      border-color: var(--color-bg-container);
+
+      .icon {
+        background-color: var(--color-bg-page);
+      }
+    }
+  }
+
+  &:has(input:checked) {
     background-color: var(--color-bg-container);
-    color: var(--color-bg-page);
+    color: var(--color-text-inverse);
+    border-color: var(--color-bg-container);
 
     .icon {
       background-color: var(--color-bg-page);

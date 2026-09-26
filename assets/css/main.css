@@ -73,9 +73,11 @@
     height: 0.8125rem;
     place-self: center;
   }
-  &:hover {
-    background-color: var(--color-border-inverse);
-    color: var(--color-text-inverse);
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--color-border-inverse);
+      color: var(--color-text-inverse);
+    }
   }
 
   @media (max-width: 479px) {
@@ -170,8 +172,10 @@
     scale: 1.1;
     transition: scale 0.3s ease-in-out;
 
-    &:hover {
-      scale: 1;
+    @media (hover: hover) {
+      &:hover {
+        scale: 1;
+      }
     }
   }
 }
@@ -192,8 +196,9 @@
 
   img {
     flex-shrink: 1;
+    flex-grow: 0;
     max-width: 100%;
-    width: 100%;
+    width: 39.375rem;
     height: auto;
   }
 }
@@ -253,8 +258,10 @@ body.dark-mode {
     font-weight: 600;
   }
 
-  &:hover {
-    background-color: var(--color-border-inverse);
-    color: var(--color-text-inverse);
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--color-border-inverse);
+      color: var(--color-text-inverse);
+    }
   }
 }

@@ -55,7 +55,7 @@ html { font-size: calc(var(--font-size-4) * 1rem); }
   --color-text-accent: #B0907A;
   --color-bg-page: #292826;
   --color-bg-container: #403F3D;
-  --color-bg-overlay: #292826CC;
+  --color-bg-overlay: #E1D4C9CC;
   --color-border-primary: #665F55;
   --color-border-inverse: #C1B6AD;
 }
@@ -98,9 +98,7 @@ body {
   &:has(nav.active), &:has(dialog:modal) {
     overflow: hidden;
   }
-  /*&:has(dialog:modal) {
-    overflow: hidden;
-  }*/
+
 }
 
 a:not([class]) {
@@ -176,15 +174,18 @@ section {
     transition: all 0.3s ease;
   }
 
-  &:hover {
-    gap: 0.5rem;
-    grid-template-columns: max-content 1.03125rem;
+  @media (hover: hover) {
+    &:hover {
+      gap: 0.5rem;
+      grid-template-columns: max-content 1.03125rem;
 
-    svg {
-      opacity: 1;
-      transform: translateX(0);
+      svg {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
   }
+
 }
 
 span.accent {
@@ -221,11 +222,14 @@ header a {
   text-decoration: none;
   color: var(--color-text-primary);
 
-  &:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 0.125rem;
-    text-underline-offset: 0.25rem;
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 0.125rem;
+      text-underline-offset: 0.25rem;
+    }
   }
+
 }
 
 .header-actions {
@@ -259,14 +263,26 @@ header a {
     transition: all 0.3s ease;
     color: var(--color-text-primary);
 
+    &.light svg {
+      width: 1.375rem;
+      height: 1.375rem;
+    }
+
+    &.dark svg {
+      width: 1.125rem;
+      height: 1.125rem;
+    }
+
     &.active {
       background-color: var(--color-text-accent);
       color: var(--color-text-inverse);
     }
 
-    &:hover {
-      background-color: var(--color-border-inverse);
-      color: var(--color-text-inverse);
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--color-border-inverse);
+        color: var(--color-text-inverse);
+      }
     }
   }
 }
@@ -275,6 +291,11 @@ header a {
   display: flex;
   gap: 0.5rem;
   position: relative;
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
 
   &.is-desktop {
     display: flex;
@@ -294,18 +315,20 @@ header a {
     }
   }
 
-  &:hover {
-    text-decoration: none;
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: none;
 
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 0.125rem;
-      background-color: var(--color-text-primary);
-      transition: width 0.3s ease;
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.125rem;
+        background-color: var(--color-text-primary);
+        transition: width 0.3s ease;
+      }
     }
   }
 }
@@ -363,11 +386,11 @@ header nav.active .menu-button svg path:nth-of-type(2) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding-top: min(19.4vh ,10rem);
     z-index: -1;
     transform: translateX(100%);
     transition: transform 0.3s ease;
-    gap: 3.75rem;
+    gap: min(7.3vh, 3.75rem);
     font-size: 2rem;
     line-height: 1.25;
 
@@ -442,9 +465,11 @@ header nav.active .menu-button svg path:nth-of-type(2) {
     place-self: center;
   }
 
-  &:hover {
-    background-color: var(--color-text-inverse);
-    color: var(--color-bg-container);
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--color-text-inverse);
+      color: var(--color-bg-container);
+    }
   }
 }
 
@@ -467,7 +492,10 @@ header nav.active .menu-button svg path:nth-of-type(2) {
     text-decoration: none;
     border-bottom: 0.125rem solid transparent;
 
-    &:hover {
-      border-bottom: 0.125rem solid var(--color-text-inverse);    }
+    @media (hover: hover) {
+      &:hover {
+        border-bottom: 0.125rem solid var(--color-text-inverse);
+      }
+    }
   }
 }
