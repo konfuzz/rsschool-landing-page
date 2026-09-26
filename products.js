@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
       input.value = option['add-price'];
 
       const spanSmall = document.createElement('span');
+      spanSmall.classList.add('icon');
       spanSmall.textContent = inputType === 'radio' ? key : index + 1;
       label.appendChild(spanSmall);
 
@@ -87,8 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     selectedOptions.forEach((input) => {
       total += +(input.value);
     });
-    console.log(total);
-    dialog.querySelector('.dialog__price').textContent = `$${total}`;
+    dialog.querySelector('.dialog__price').textContent = `$${total.toFixed(2)}`;
   }
 
   tabsContent.addEventListener('click', (e) => {

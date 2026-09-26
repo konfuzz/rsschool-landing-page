@@ -44,7 +44,7 @@ html { font-size: calc(var(--font-size-4) * 1rem); }
   --color-text-accent: #B0907A;
   --color-bg-page: #E1D4C9;
   --color-bg-container: #665F55;
-  --color-bg-overlay: #403F3D50;
+  --color-bg-overlay: #403F3DCC;
   --color-border-primary: #C1B6AD;
   --color-border-inverse: #665F55;
 }
@@ -55,7 +55,7 @@ html { font-size: calc(var(--font-size-4) * 1rem); }
   --color-text-accent: #B0907A;
   --color-bg-page: #292826;
   --color-bg-container: #403F3D;
-  --color-bg-overlay: #29282650;
+  --color-bg-overlay: #292826CC;
   --color-border-primary: #665F55;
   --color-border-inverse: #C1B6AD;
 }
@@ -95,9 +95,12 @@ body {
     padding: 0 1rem;
   }
 
-  &:has(nav.active) {
+  &:has(nav.active), &:has(dialog:modal) {
     overflow: hidden;
   }
+  /*&:has(dialog:modal) {
+    overflow: hidden;
+  }*/
 }
 
 a:not([class]) {
