@@ -34,4 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  const menuItems = menu.querySelectorAll('a');
+  menuItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      menu.classList.remove('active');
+    });
+  });
+
 })
