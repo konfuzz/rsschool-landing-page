@@ -1,3 +1,11 @@
+document.addEventListener('touchstart', e => {
+  if (e.target instanceof HTMLDialogElement && e.target.open) {
+    e.target.addEventListener('touchend', te => {
+      te.preventDefault();
+    }, { once: true, passive: false });
+  }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
 
   const loadButton = document.querySelector('.load-button');
