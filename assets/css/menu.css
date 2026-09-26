@@ -118,6 +118,7 @@ h1 {
   cursor: pointer;
   rotate: -0turn;
   transition: all 0.3s ease;
+  color: var(--color-text-primary);
 
   @media (hover: hover) {
     &:hover {
