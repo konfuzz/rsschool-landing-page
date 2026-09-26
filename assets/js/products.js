@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const products = [];
 
   async function getContent() {
-    const data = await fetch('products.json');
+    const data = await fetch('data/products.json');
     const json = await data.json();
     return json;
   }
